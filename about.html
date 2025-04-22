@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About ZD-STOR</title>
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer&display=swap" rel="stylesheet">
+  <link rel="icon" href="zd.png" type="image/png">
+  
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Noto Sans Khmer', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding: 20px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #222;
+    }
+
+    p {
+      margin-bottom: 15px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .highlight {
+      color: #00bcd4;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+      outline: none;
+    }
+
+    .highlight:hover,
+    .highlight:focus {
+      color: #0097a7;
+    }
+
+    @media (max-width: 600px) {
+      .section {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section id="about" class="section">
+    <h2>អំពី ZD-STOR</h2>
+    <p>
+      កាន់តែសម្បូរបែប! ហាង <span class="highlight" role="button" tabindex="0" onclick="handleClick()">ZD-STOR</span> បានបើកសាខាថ្មីនៅ PreySar គម្រោង ដឹស្តាដាយមិន។
+    </p>
+    <p>
+      កាលពីថ្ងៃទី ២០ ខែមេសា ឆ្នាំ ២០២៥ ក្រុមហ៊ុន សែមចាន់ឧត្តម ប្រាយវេត លីមីធីត បានបើកផ្សារ <span class="highlight" role="button" tabindex="0" onclick="handleClick()">ZD-STOR</span> ជាផ្លូវការ។
+    </p>
+    <p>
+      ទីតាំងនេះគឺជាសាខាទីមួយ ដោយស្ថិតនៅតំបន់មានសក្តានុពលខ្ពស់សម្រាប់រស់នៅ និងធ្វើអាជីវកម្ម។
+    </p>
+    <p>
+      មានទាំងផ្សារទំនើប និងធនាគារជាច្រើនដែលអាចឆ្លើយតបទំនងការរស់នៅប្រកបដោយគុណភាព។
+    </p>
+    <p>
+      សាខាថ្មីរបស់ <span class="highlight" role="button" tabindex="0" onclick="handleClick()">ZD-STOR</span> ស្ថិតនៅក្នុងគម្រោងដូចខាងលើ — សូមអញ្ជើញ!
+    </p>
+    <button><a href="index.html">⬅ Back</a></button>
+  </section>
+
+  <script>
+    // Reveal on scroll
+
+    window.addEventListener('scroll', () => {
+  const section = document.getElementById('about');
+  const sectionTop = section.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 1.2;
+
+  if (sectionTop < screenPosition) {
+    section.classList.add('visible');
+  } else {
+    section.classList.remove('visible');
+  }
+});
+
+// Run once on page load too
+window.dispatchEvent(new Event('scroll'));
+
+    // Accessibility: handle Enter key for highlight
+    document.querySelectorAll('.highlight').forEach(el => {
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') handleClick();
+      });
+    });
+
+    // ZD-STOR click behavior
+    function handleClick() {
+      alert("អរគុណសម្រាប់ការចាប់អារម្មណ៍! ✨ ZD-STOR ស្វាគមន៍អ្នកគ្រប់ពេល!");
+    }
+  </script>
+
+</body>
+</html>
